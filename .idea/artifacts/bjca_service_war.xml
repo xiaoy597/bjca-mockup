@@ -1,0 +1,8 @@
+<component name="ArtifactManager">
+  <artifact type="war" name="bjca-service:war">
+    <output-path>$PROJECT_DIR$/service/target</output-path>
+    <root id="archive" name="wsdl_first.war">
+      <element id="artifact" artifact-name="bjca-service:war exploded" />
+    </root>
+  </artifact>
+</component>

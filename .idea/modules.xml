@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ProjectModuleManager">
+    <modules>
+      <module fileurl="file://$PROJECT_DIR$/service/bjca-service.iml" filepath="$PROJECT_DIR$/service/bjca-service.iml" />
+      <module fileurl="file://$PROJECT_DIR$/bjca.mockup.iml" filepath="$PROJECT_DIR$/bjca.mockup.iml" />
+      <module fileurl="file://$PROJECT_DIR$/wsdl/bjca.mockup.wsdl.iml" filepath="$PROJECT_DIR$/wsdl/bjca.mockup.wsdl.iml" />
+    </modules>
+  </component>
+</project>

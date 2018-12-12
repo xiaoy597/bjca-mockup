@@ -1,0 +1,193 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<wsdl:definitions name="UserService" targetNamespace="http://mockup.bjca.seaboxdata.com/" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:tns="http://mockup.bjca.seaboxdata.com/" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/">
+  <wsdl:types>
+<xs:schema xmlns:tns="http://mockup.bjca.seaboxdata.com/" xmlns:xs="http://www.w3.org/2001/XMLSchema" elementFormDefault="unqualified" targetNamespace="http://mockup.bjca.seaboxdata.com/" version="1.0">
+
+  <xs:element name="findPersonInfosByUserIDForDC" type="tns:findPersonInfosByUserIDForDC"/>
+
+  <xs:element name="findPersonInfosByUserIDForDCResponse" type="tns:findPersonInfosByUserIDForDCResponse"/>
+
+  <xs:element name="findRoleInfoByRoleCode" type="tns:findRoleInfoByRoleCode"/>
+
+  <xs:element name="findRoleInfoByRoleCodeResponse" type="tns:findRoleInfoByRoleCodeResponse"/>
+
+  <xs:element name="getLoginInformationByUserID" type="tns:getLoginInformationByUserID"/>
+
+  <xs:element name="getLoginInformationByUserIDResponse" type="tns:getLoginInformationByUserIDResponse"/>
+
+  <xs:complexType name="findPersonInfosByUserIDForDC">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="userId" type="xs:string"/>
+    </xs:sequence>
+  </xs:complexType>
+
+  <xs:complexType name="findPersonInfosByUserIDForDCResponse">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="return" type="tns:personInformation"/>
+    </xs:sequence>
+  </xs:complexType>
+
+  <xs:complexType name="personInformation">
+    <xs:complexContent>
+      <xs:extension base="tns:userInformation">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="departCode" type="xs:string"/>
+          <xs:element maxOccurs="unbounded" minOccurs="0" name="departs" nillable="true" type="xs:anyType"/>
+          <xs:element minOccurs="0" name="userAddress" type="xs:string"/>
+          <xs:element minOccurs="0" name="userCertType" type="xs:string"/>
+          <xs:element minOccurs="0" name="userDefault1" type="xs:string"/>
+          <xs:element minOccurs="0" name="userDefault2" type="xs:string"/>
+          <xs:element minOccurs="0" name="userDefault3" type="xs:string"/>
+          <xs:element minOccurs="0" name="userDefault4" type="xs:string"/>
+          <xs:element minOccurs="0" name="userDefault5" type="xs:string"/>
+          <xs:element minOccurs="0" name="userDefault6" type="xs:string"/>
+          <xs:element minOccurs="0" name="userDegree" type="xs:string"/>
+          <xs:element minOccurs="0" name="userDuty" type="xs:string"/>
+          <xs:element minOccurs="0" name="userEmail" type="xs:string"/>
+          <xs:element minOccurs="0" name="userIdcardNum" type="xs:string"/>
+          <xs:element minOccurs="0" name="userMobile" type="xs:string"/>
+          <xs:element minOccurs="0" name="userName" type="xs:string"/>
+          <xs:element minOccurs="0" name="userNation" type="xs:string"/>
+          <xs:element minOccurs="0" name="userPhone" type="xs:string"/>
+          <xs:element minOccurs="0" name="userPostcode" type="xs:string"/>
+          <xs:element minOccurs="0" name="userTitle" type="xs:string"/>
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+
+  <xs:complexType name="userInformation">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="default1" type="xs:string"/>
+      <xs:element minOccurs="0" name="uniqueid" type="xs:string"/>
+      <xs:element minOccurs="0" name="userIdcode" type="xs:string"/>
+      <xs:element minOccurs="0" name="userState" type="xs:string"/>
+      <xs:element minOccurs="0" name="userType" type="xs:string"/>
+    </xs:sequence>
+  </xs:complexType>
+
+  <xs:complexType name="findRoleInfoByRoleCode">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="roleCode" type="xs:string"/>
+    </xs:sequence>
+  </xs:complexType>
+
+  <xs:complexType name="findRoleInfoByRoleCodeResponse">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="return" type="tns:roleInformation"/>
+    </xs:sequence>
+  </xs:complexType>
+
+  <xs:complexType name="roleInformation">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="urFlowno" type="xs:string"/>
+      <xs:element minOccurs="0" name="userRoleCode" type="xs:string"/>
+      <xs:element minOccurs="0" name="userRoleDescribe" type="xs:string"/>
+      <xs:element minOccurs="0" name="userRoleName" type="xs:string"/>
+      <xs:element minOccurs="0" name="userRoleState" type="xs:string"/>
+    </xs:sequence>
+  </xs:complexType>
+
+  <xs:complexType name="getLoginInformationByUserID">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="userId" type="xs:string"/>
+    </xs:sequence>
+  </xs:complexType>
+
+  <xs:complexType name="getLoginInformationByUserIDResponse">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="return" type="tns:loginInformation"/>
+    </xs:sequence>
+  </xs:complexType>
+
+  <xs:complexType name="loginInformation">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="loginName" type="xs:string"/>
+      <xs:element minOccurs="0" name="loginNickName" type="xs:string"/>
+      <xs:element minOccurs="0" name="loginPwd" type="xs:string"/>
+      <xs:element minOccurs="0" name="loginType" type="xs:string"/>
+    </xs:sequence>
+  </xs:complexType>
+
+</xs:schema>
+  </wsdl:types>
+  <wsdl:message name="findRoleInfoByRoleCode">
+    <wsdl:part name="parameters" element="tns:findRoleInfoByRoleCode">
+    </wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="getLoginInformationByUserIDResponse">
+    <wsdl:part name="parameters" element="tns:getLoginInformationByUserIDResponse">
+    </wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="findPersonInfosByUserIDForDCResponse">
+    <wsdl:part name="parameters" element="tns:findPersonInfosByUserIDForDCResponse">
+    </wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="findPersonInfosByUserIDForDC">
+    <wsdl:part name="parameters" element="tns:findPersonInfosByUserIDForDC">
+    </wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="findRoleInfoByRoleCodeResponse">
+    <wsdl:part name="parameters" element="tns:findRoleInfoByRoleCodeResponse">
+    </wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="getLoginInformationByUserID">
+    <wsdl:part name="parameters" element="tns:getLoginInformationByUserID">
+    </wsdl:part>
+  </wsdl:message>
+  <wsdl:portType name="UserService">
+    <wsdl:operation name="findPersonInfosByUserIDForDC">
+      <wsdl:input name="findPersonInfosByUserIDForDC" message="tns:findPersonInfosByUserIDForDC">
+    </wsdl:input>
+      <wsdl:output name="findPersonInfosByUserIDForDCResponse" message="tns:findPersonInfosByUserIDForDCResponse">
+    </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="findRoleInfoByRoleCode">
+      <wsdl:input name="findRoleInfoByRoleCode" message="tns:findRoleInfoByRoleCode">
+    </wsdl:input>
+      <wsdl:output name="findRoleInfoByRoleCodeResponse" message="tns:findRoleInfoByRoleCodeResponse">
+    </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="getLoginInformationByUserID">
+      <wsdl:input name="getLoginInformationByUserID" message="tns:getLoginInformationByUserID">
+    </wsdl:input>
+      <wsdl:output name="getLoginInformationByUserIDResponse" message="tns:getLoginInformationByUserIDResponse">
+    </wsdl:output>
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:binding name="UserServiceServiceSoapBinding" type="tns:UserService">
+    <soap:binding style="document" transport="http://schemas.xmlsoap.org/soap/http"/>
+    <wsdl:operation name="findPersonInfosByUserIDForDC">
+      <soap:operation soapAction="" style="document"/>
+      <wsdl:input name="findPersonInfosByUserIDForDC">
+        <soap:body use="literal"/>
+      </wsdl:input>
+      <wsdl:output name="findPersonInfosByUserIDForDCResponse">
+        <soap:body use="literal"/>
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="findRoleInfoByRoleCode">
+      <soap:operation soapAction="" style="document"/>
+      <wsdl:input name="findRoleInfoByRoleCode">
+        <soap:body use="literal"/>
+      </wsdl:input>
+      <wsdl:output name="findRoleInfoByRoleCodeResponse">
+        <soap:body use="literal"/>
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="getLoginInformationByUserID">
+      <soap:operation soapAction="" style="document"/>
+      <wsdl:input name="getLoginInformationByUserID">
+        <soap:body use="literal"/>
+      </wsdl:input>
+      <wsdl:output name="getLoginInformationByUserIDResponse">
+        <soap:body use="literal"/>
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:service name="UserService">
+    <wsdl:port name="UserServicePort" binding="tns:UserServiceServiceSoapBinding">
+      <soap:address location="http://localhost:8080/bjca/services/UserServicePort"/>
+    </wsdl:port>
+  </wsdl:service>
+</wsdl:definitions>

@@ -1,0 +1,110 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<wsdl:definitions name="DepartmentService" targetNamespace="http://mockup.bjca.seaboxdata.com/" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:tns="http://mockup.bjca.seaboxdata.com/" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/">
+  <wsdl:types>
+<xs:schema xmlns:tns="http://mockup.bjca.seaboxdata.com/" xmlns:xs="http://www.w3.org/2001/XMLSchema" elementFormDefault="unqualified" targetNamespace="http://mockup.bjca.seaboxdata.com/" version="1.0">
+
+  <xs:element name="findDepartByDepartCodeForDC" type="tns:findDepartByDepartCodeForDC"/>
+
+  <xs:element name="findDepartByDepartCodeForDCResponse" type="tns:findDepartByDepartCodeForDCResponse"/>
+
+  <xs:element name="getAllDepartForDC" type="tns:getAllDepartForDC"/>
+
+  <xs:element name="getAllDepartForDCResponse" type="tns:getAllDepartForDCResponse"/>
+
+  <xs:complexType name="getAllDepartForDC">
+    <xs:sequence/>
+  </xs:complexType>
+
+  <xs:complexType name="getAllDepartForDCResponse">
+    <xs:sequence>
+      <xs:element maxOccurs="unbounded" minOccurs="0" name="return" type="xs:anyType"/>
+    </xs:sequence>
+  </xs:complexType>
+
+  <xs:complexType name="findDepartByDepartCodeForDC">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="departCode" type="xs:string"/>
+    </xs:sequence>
+  </xs:complexType>
+
+  <xs:complexType name="findDepartByDepartCodeForDCResponse">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="return" type="tns:departmentInformation"/>
+    </xs:sequence>
+  </xs:complexType>
+
+  <xs:complexType name="departmentInformation">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="departAddress" type="xs:string"/>
+      <xs:element minOccurs="0" name="departCode" type="xs:string"/>
+      <xs:element minOccurs="0" name="departDefault" type="xs:string"/>
+      <xs:element minOccurs="0" name="departDescript" type="xs:string"/>
+      <xs:element minOccurs="0" name="departName" type="xs:string"/>
+      <xs:element minOccurs="0" name="departPhone" type="xs:string"/>
+      <xs:element minOccurs="0" name="departPostCode" type="xs:string"/>
+      <xs:element minOccurs="0" name="departSortNum" type="xs:string"/>
+      <xs:element minOccurs="0" name="departUnitCode" type="xs:string"/>
+      <xs:element minOccurs="0" name="departUpcode" type="xs:string"/>
+      <xs:element minOccurs="0" name="departWEBAddress" type="xs:string"/>
+    </xs:sequence>
+  </xs:complexType>
+
+</xs:schema>
+  </wsdl:types>
+  <wsdl:message name="getAllDepartForDCResponse">
+    <wsdl:part name="parameters" element="tns:getAllDepartForDCResponse">
+    </wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="findDepartByDepartCodeForDCResponse">
+    <wsdl:part name="parameters" element="tns:findDepartByDepartCodeForDCResponse">
+    </wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="findDepartByDepartCodeForDC">
+    <wsdl:part name="parameters" element="tns:findDepartByDepartCodeForDC">
+    </wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="getAllDepartForDC">
+    <wsdl:part name="parameters" element="tns:getAllDepartForDC">
+    </wsdl:part>
+  </wsdl:message>
+  <wsdl:portType name="DepartmentService">
+    <wsdl:operation name="getAllDepartForDC">
+      <wsdl:input name="getAllDepartForDC" message="tns:getAllDepartForDC">
+    </wsdl:input>
+      <wsdl:output name="getAllDepartForDCResponse" message="tns:getAllDepartForDCResponse">
+    </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="findDepartByDepartCodeForDC">
+      <wsdl:input name="findDepartByDepartCodeForDC" message="tns:findDepartByDepartCodeForDC">
+    </wsdl:input>
+      <wsdl:output name="findDepartByDepartCodeForDCResponse" message="tns:findDepartByDepartCodeForDCResponse">
+    </wsdl:output>
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:binding name="DepartmentServiceServiceSoapBinding" type="tns:DepartmentService">
+    <soap:binding style="document" transport="http://schemas.xmlsoap.org/soap/http"/>
+    <wsdl:operation name="getAllDepartForDC">
+      <soap:operation soapAction="" style="document"/>
+      <wsdl:input name="getAllDepartForDC">
+        <soap:body use="literal"/>
+      </wsdl:input>
+      <wsdl:output name="getAllDepartForDCResponse">
+        <soap:body use="literal"/>
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="findDepartByDepartCodeForDC">
+      <soap:operation soapAction="" style="document"/>
+      <wsdl:input name="findDepartByDepartCodeForDC">
+        <soap:body use="literal"/>
+      </wsdl:input>
+      <wsdl:output name="findDepartByDepartCodeForDCResponse">
+        <soap:body use="literal"/>
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:service name="DepartmentService">
+    <wsdl:port name="DepartmentServicePort" binding="tns:DepartmentServiceServiceSoapBinding">
+      <soap:address location="http://localhost:8080/bjca/services/DepartmentServicePort"/>
+    </wsdl:port>
+  </wsdl:service>
+</wsdl:definitions>
